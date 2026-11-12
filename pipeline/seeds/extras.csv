@@ -1,0 +1,150 @@
+ticker,name,sector,industry,country,region
+ASML.AS,ASML,Information Technology,Semiconductor Equipment,NL,EU
+SAP.DE,SAP,Information Technology,Application Software,DE,EU
+SIE.DE,Siemens,Industrials,Industrial Conglomerates,DE,EU
+ALV.DE,Allianz,Financials,Multi-line Insurance,DE,EU
+MUV2.DE,Munich Re,Financials,Reinsurance,DE,EU
+DTE.DE,Deutsche Telekom,Communication Services,Integrated Telecommunication Services,DE,EU
+BAS.DE,BASF,Materials,Diversified Chemicals,DE,EU
+BAYN.DE,Bayer,Health Care,Pharmaceuticals,DE,EU
+BMW.DE,BMW,Consumer Discretionary,Automobile Manufacturers,DE,EU
+MBG.DE,Mercedes-Benz Group,Consumer Discretionary,Automobile Manufacturers,DE,EU
+VOW3.DE,Volkswagen (mateřská firma Škody),Consumer Discretionary,Automobile Manufacturers,DE,EU
+P911.DE,Porsche AG,Consumer Discretionary,Automobile Manufacturers,DE,EU
+DBK.DE,Deutsche Bank,Financials,Diversified Banks,DE,EU
+CBK.DE,Commerzbank,Financials,Diversified Banks,DE,EU
+ADS.DE,Adidas,Consumer Discretionary,"Apparel, Accessories & Luxury Goods",DE,EU
+RHM.DE,Rheinmetall,Industrials,Aerospace & Defense,DE,EU
+IFX.DE,Infineon,Information Technology,Semiconductors,DE,EU
+LHA.DE,Lufthansa,Industrials,Passenger Airlines,DE,EU
+AIR.PA,Airbus,Industrials,Aerospace & Defense,FR,EU
+SAF.PA,Safran,Industrials,Aerospace & Defense,FR,EU
+HO.PA,Thales,Industrials,Aerospace & Defense,FR,EU
+MC.PA,LVMH,Consumer Discretionary,"Apparel, Accessories & Luxury Goods",FR,EU
+RMS.PA,Hermès,Consumer Discretionary,"Apparel, Accessories & Luxury Goods",FR,EU
+KER.PA,Kering,Consumer Discretionary,"Apparel, Accessories & Luxury Goods",FR,EU
+OR.PA,L'Oréal,Consumer Staples,Personal Care Products,FR,EU
+TTE.PA,TotalEnergies,Energy,Integrated Oil & Gas,FR,EU
+SAN.PA,Sanofi,Health Care,Pharmaceuticals,FR,EU
+BNP.PA,BNP Paribas,Financials,Diversified Banks,FR,EU
+GLE.PA,Société Générale,Financials,Diversified Banks,FR,EU
+ACA.PA,Crédit Agricole,Financials,Diversified Banks,FR,EU
+AI.PA,Air Liquide,Materials,Industrial Gases,FR,EU
+SU.PA,Schneider Electric,Industrials,Electrical Components & Equipment,FR,EU
+DG.PA,Vinci,Industrials,Construction & Engineering,FR,EU
+CS.PA,AXA,Financials,Multi-line Insurance,FR,EU
+EL.PA,EssilorLuxottica,Health Care,Health Care Supplies,FR,EU
+BN.PA,Danone,Consumer Staples,Packaged Foods & Meats,FR,EU
+RNO.PA,Renault,Consumer Discretionary,Automobile Manufacturers,FR,EU
+ENGI.PA,Engie,Utilities,Multi-Utilities,FR,EU
+CAP.PA,Capgemini,Information Technology,IT Consulting & Other Services,FR,EU
+STMPA.PA,STMicroelectronics,Information Technology,Semiconductors,FR,EU
+AF.PA,Air France-KLM,Industrials,Passenger Airlines,FR,EU
+INGA.AS,ING,Financials,Diversified Banks,NL,EU
+PHIA.AS,Philips,Health Care,Health Care Equipment,NL,EU
+AD.AS,Ahold Delhaize,Consumer Staples,Food Retail,NL,EU
+HEIA.AS,Heineken,Consumer Staples,Brewers,NL,EU
+ADYEN.AS,Adyen,Financials,Transaction & Payment Processing Services,NL,EU
+NESN.SW,Nestlé,Consumer Staples,Packaged Foods & Meats,CH,EU
+NOVN.SW,Novartis,Health Care,Pharmaceuticals,CH,EU
+ROG.SW,Roche,Health Care,Pharmaceuticals,CH,EU
+UBSG.SW,UBS,Financials,Diversified Banks,CH,EU
+ZURN.SW,Zurich Insurance,Financials,Multi-line Insurance,CH,EU
+CFR.SW,Richemont,Consumer Discretionary,"Apparel, Accessories & Luxury Goods",CH,EU
+ABBN.SW,ABB,Industrials,Electrical Components & Equipment,CH,EU
+LONN.SW,Lonza,Health Care,Life Sciences Tools & Services,CH,EU
+SREN.SW,Swiss Re,Financials,Reinsurance,CH,EU
+SIKA.SW,Sika,Materials,Specialty Chemicals,CH,EU
+HOLN.SW,Holcim,Materials,Construction Materials,CH,EU
+AZN.L,AstraZeneca,Health Care,Pharmaceuticals,UK,EU
+SHEL.L,Shell,Energy,Integrated Oil & Gas,UK,EU
+BP.L,BP,Energy,Integrated Oil & Gas,UK,EU
+HSBA.L,HSBC,Financials,Diversified Banks,UK,EU
+ULVR.L,Unilever,Consumer Staples,Personal Care Products,UK,EU
+GSK.L,GSK,Health Care,Pharmaceuticals,UK,EU
+DGE.L,Diageo,Consumer Staples,Distillers & Vintners,UK,EU
+RIO.L,Rio Tinto,Materials,Diversified Metals & Mining,UK,EU
+GLEN.L,Glencore,Materials,Diversified Metals & Mining,UK,EU
+AAL.L,Anglo American,Materials,Diversified Metals & Mining,UK,EU
+BATS.L,British American Tobacco,Consumer Staples,Tobacco,UK,EU
+LSEG.L,London Stock Exchange Group,Financials,Financial Exchanges & Data,UK,EU
+REL.L,RELX,Industrials,Research & Consulting Services,UK,EU
+EXPN.L,Experian,Industrials,Research & Consulting Services,UK,EU
+BARC.L,Barclays,Financials,Diversified Banks,UK,EU
+LLOY.L,Lloyds,Financials,Diversified Banks,UK,EU
+NWG.L,NatWest,Financials,Diversified Banks,UK,EU
+BA.L,BAE Systems,Industrials,Aerospace & Defense,UK,EU
+RR.L,Rolls-Royce,Industrials,Aerospace & Defense,UK,EU
+VOD.L,Vodafone,Communication Services,Wireless Telecommunication Services,UK,EU
+TSCO.L,Tesco,Consumer Staples,Food Retail,UK,EU
+NG.L,National Grid,Utilities,Multi-Utilities,UK,EU
+CPG.L,Compass Group,Consumer Discretionary,Restaurants,UK,EU
+IAG.L,International Airlines Group,Industrials,Passenger Airlines,UK,EU
+EZJ.L,easyJet,Industrials,Passenger Airlines,UK,EU
+NOVO-B.CO,Novo Nordisk,Health Care,Pharmaceuticals,DK,EU
+MAERSK-B.CO,A.P. Møller-Mærsk,Industrials,Marine Transportation,DK,EU
+VWS.CO,Vestas,Industrials,Electrical Components & Equipment,DK,EU
+DSV.CO,DSV,Industrials,Air Freight & Logistics,DK,EU
+ORSTED.CO,Ørsted,Utilities,Renewable Electricity,DK,EU
+CARL-B.CO,Carlsberg,Consumer Staples,Brewers,DK,EU
+VOLV-B.ST,Volvo,Industrials,Construction Machinery & Heavy Transportation Equipment,SE,EU
+ERIC-B.ST,Ericsson,Information Technology,Communications Equipment,SE,EU
+ATCO-A.ST,Atlas Copco,Industrials,Industrial Machinery & Supplies & Components,SE,EU
+SAND.ST,Sandvik,Industrials,Industrial Machinery & Supplies & Components,SE,EU
+INVE-B.ST,Investor AB,Financials,Multi-Sector Holdings,SE,EU
+SEB-A.ST,SEB,Financials,Diversified Banks,SE,EU
+HM-B.ST,H&M,Consumer Discretionary,Apparel Retail,SE,EU
+EQNR.OL,Equinor,Energy,Integrated Oil & Gas,NO,EU
+DNB.OL,DNB Bank,Financials,Diversified Banks,NO,EU
+NHY.OL,Norsk Hydro,Materials,Aluminum,NO,EU
+NOKIA.HE,Nokia,Information Technology,Communications Equipment,FI,EU
+NESTE.HE,Neste,Energy,Oil & Gas Refining & Marketing,FI,EU
+KNEBV.HE,Kone,Industrials,Industrial Machinery & Supplies & Components,FI,EU
+SAMPO.HE,Sampo,Financials,Multi-line Insurance,FI,EU
+UCG.MI,UniCredit,Financials,Diversified Banks,IT,EU
+ISP.MI,Intesa Sanpaolo,Financials,Diversified Banks,IT,EU
+ENEL.MI,Enel,Utilities,Electric Utilities,IT,EU
+ENI.MI,Eni,Energy,Integrated Oil & Gas,IT,EU
+RACE.MI,Ferrari,Consumer Discretionary,Automobile Manufacturers,IT,EU
+G.MI,Generali,Financials,Multi-line Insurance,IT,EU
+LDO.MI,Leonardo,Industrials,Aerospace & Defense,IT,EU
+STLAM.MI,Stellantis,Consumer Discretionary,Automobile Manufacturers,IT,EU
+IBE.MC,Iberdrola,Utilities,Electric Utilities,ES,EU
+SAN.MC,Banco Santander,Financials,Diversified Banks,ES,EU
+BBVA.MC,BBVA,Financials,Diversified Banks,ES,EU
+ITX.MC,Inditex,Consumer Discretionary,Apparel Retail,ES,EU
+TEF.MC,Telefónica,Communication Services,Integrated Telecommunication Services,ES,EU
+REP.MC,Repsol,Energy,Integrated Oil & Gas,ES,EU
+AMS.MC,Amadeus IT,Information Technology,Data Processing & Outsourced Services,ES,EU
+CEZ.PR,ČEZ,Utilities,Electric Utilities,CZ,EU
+KOMB.PR,Komerční banka,Financials,Diversified Banks,CZ,EU
+MONET.PR,Moneta Money Bank,Financials,Diversified Banks,CZ,EU
+PKN.WA,Orlen,Energy,Oil & Gas Refining & Marketing,PL,EU
+PKO.WA,PKO Bank Polski,Financials,Diversified Banks,PL,EU
+TSM,TSMC (ADR),Information Technology,Semiconductors,TW,OTHER
+NVO,Novo Nordisk (ADR),Health Care,Pharmaceuticals,DK,OTHER
+BABA,Alibaba,Consumer Discretionary,Broadline Retail,CN,OTHER
+BIDU,Baidu,Communication Services,Interactive Media & Services,CN,OTHER
+JD,JD.com,Consumer Discretionary,Broadline Retail,CN,OTHER
+TM,Toyota (ADR),Consumer Discretionary,Automobile Manufacturers,JP,OTHER
+SONY,Sony (ADR),Consumer Discretionary,Consumer Electronics,JP,OTHER
+005930.KS,Samsung Electronics,Information Technology,"Technology Hardware, Storage & Peripherals",KR,OTHER
+000660.KS,SK Hynix,Information Technology,Semiconductors,KR,OTHER
+8035.T,Tokyo Electron,Information Technology,Semiconductor Equipment,JP,OTHER
+9984.T,SoftBank Group,Communication Services,Wireless Telecommunication Services,JP,OTHER
+VALE,Vale,Materials,Steel,BR,OTHER
+PBR,Petrobras,Energy,Integrated Oil & Gas,BR,OTHER
+SHOP,Shopify,Information Technology,Application Software,CA,OTHER
+INFY,Infosys,Information Technology,IT Consulting & Other Services,IN,OTHER
+RYAAY,Ryanair (ADR),Industrials,Passenger Airlines,IE,OTHER
+GLD,SPDR Gold (zlato),ETF,Makro proxy,US,ETF
+SLV,iShares Silver (stříbro),ETF,Makro proxy,US,ETF
+USO,US Oil Fund (ropa),ETF,Makro proxy,US,ETF
+UNG,US Natural Gas Fund (plyn),ETF,Makro proxy,US,ETF
+TLT,iShares 20+Y Treasury (dluhopisy),ETF,Makro proxy,US,ETF
+HYG,iShares High Yield (kredit),ETF,Makro proxy,US,ETF
+IBIT,iShares Bitcoin Trust,ETF,Makro proxy,US,ETF
+FXI,iShares China Large-Cap,ETF,Makro proxy,CN,ETF
+EEM,iShares Emerging Markets,ETF,Makro proxy,US,ETF
+SPY,SPDR S&P 500 (benchmark USA),ETF,Makro proxy,US,ETF
+EXSA.DE,iShares STOXX Europe 600 (benchmark EU),ETF,Makro proxy,DE,ETF

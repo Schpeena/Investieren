@@ -1,0 +1,17 @@
+SIGNÁLY – lokální verze pro Windows
+===================================
+Spuštění:  dvojklik na Signaly.exe  (otevře se okno programu a prohlížeč na http://127.0.0.1:8765/)
+
+První spuštění
+- Průvodce se zeptá na jméno + e-mail (SEC EDGAR to vyžaduje), na téma ntfy pro notifikace na iPhone a na volitelné klíče
+  (Stooq, Finnhub). Vše se uloží do %LOCALAPPDATA%\Signaly\settings.json.
+- Pak program na pozadí stáhne historii a natrénuje modely. Poprvé to trvá od desítek minut po několik hodin; stav je vidět
+  v appce. Okno programu nech běžet (může být minimalizované). Zavřením okna se běhy zastaví a příště pokračují.
+
+Co je kde
+- Data, logy a tvoje oblíbené/nákupní ceny: %LOCALAPPDATA%\Signaly   (nikam se neposílají)
+- Rychlé vyzkoušení bez internetu: Signaly-demo.bat
+- Spouštění po přihlášení do Windows: Autostart-zapnout.bat / Autostart-vypnout.bat
+
+Windows může při prvním spuštění ukázat „Počítač byl chráněn“ (program není podepsaný): Další informace -> Přesto spustit.
+Statistický nástroj, ne investiční doporučení.
