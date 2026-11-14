@@ -39,7 +39,11 @@ def stooq_series(code, start):
     _stooq_rl.wait()
     d1 = pd.Timestamp(start).strftime("%Y%m%d")
     d2 = (pd.Timestamp.today() + pd.Timedelta(days=1)).strftime("%Y%m%d")
-    txt = http.get(f"https://stooq.com/q/d/l/?s={code}&i=d&d1={d1}&d2={d2}{stooq_key_param()}", "stooq")
+    try:
+        txt = http.get(f"https://stooq.com/q/d/l/?s={code}&i=d&d1={d1}&d2={d2}{stooq_key_param()}", "stooq", timeout=12)
+    except Exception:
+        _stooq_state["bad"] += 1                  # časový limit / odmítnuté spojení se počítá do jističe stejně jako HTML místo CSV
+        raise
     if not txt.startswith("Date"):
         _stooq_state["bad"] += 1
         raise ValueError("Stooq: neočekávaná odpověď (vyžaduje apikey – nastav secret STOOQ_APIKEY, viz README)")
@@ -65,7 +69,7 @@ def yahoo_series(sym, start=None, rng=None):
 
 def fetch_one(ticker, stooq, start, incremental):
     err = None
-    if stooq:
+    if stooq and STOOQ_KEY:                       # Stooq bez klíče nefunguje (HTML / zaseknuté spojení) -> rovnou Yahoo
         try:
             return stooq_series(stooq, start)
         except Exception as e:
@@ -106,6 +110,10 @@ def update(universe, full=False, workers=6):
         db = db.sort_index()
         save_db(db)
     print(f"[prices] staženo {len(results)}/{len(jobs)} tickerů, selhalo {len(fails)}")
+    if fails:                                     # diagnostika do logu: poslední chyba každého zdroje
+        for src, h in http.health_report().items():
+            if h["fail"]:
+                print(f"[prices]   zdroj {src}: ok {h['ok']}, chyb {h['fail']}, poslední chyba: {h['last_error']}")
     return db, fails
 
 YAHOO_ALIAS = {"TON-USD": "TON11419-USD", "SUI-USD": "SUI20947-USD", "APT-USD": "APT21794-USD", "ARB-USD": "ARB11841-USD"}
