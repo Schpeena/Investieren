@@ -61,7 +61,7 @@ def env_for(h, s):
     """Prostředí pro podprocesy pipeline: vše lokálně, bez GitHubu, UTF-8."""
     e = dict(os.environ)
     e.update({"CACHE_DIR": str(h / "cache"), "SITE_DATA_DIR": str(h / "site" / "data"), "NO_GH": "1", "SIGNALY_LOCAL": "1",
-              "PYTHONUTF8": "1", "PYTHONIOENCODING": "utf-8", "SEC_UA": s["sec_ua"] or "SignalApp research (nastav SEC_UA v settings.json)"})
+              "PYTHONUTF8": "1", "PYTHONIOENCODING": "utf-8", "PYTHONUNBUFFERED": "1", "SEC_UA": s["sec_ua"] or "SignalApp research (nastav SEC_UA v settings.json)"})
     for k, env in (("ntfy_topic", "NTFY_TOPIC"), ("stooq_apikey", "STOOQ_APIKEY"), ("finnhub_key", "FINNHUB_KEY")):
         if s.get(k):
             e[env] = s[k]
