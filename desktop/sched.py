@@ -181,6 +181,9 @@ class Scheduler:
             self.log(f"[sched] {job}: {e}")
         finally:
             self.proc = None
+        if rc == 0 and job == "daily" and not self.has()["prices"]:
+            self.log("[sched] daily skončil bez uložených cen (všechna stahování selhala) – beru jako chybu, zkusím později; podrobnosti v logs\\daily.log")
+            rc = 3
         now = datetime.now(timezone.utc)
         if rc == 0:
             self.st.setdefault("last", {})[job] = {"at": _iso(now), "rc": 0, "secs": int(time.time() - t0)}
