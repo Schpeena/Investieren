@@ -1,0 +1,32 @@
+name: build-exe
+# Sestaví Signaly.exe (Windows) a ověří ho: --selftest vytvoří ukázková data v podprocesech a vyzkouší lokální API.
+# Spuštění: Actions -> build-exe -> Run workflow. Výsledek: artefakt „Signaly-windows“ (zip). U tagu v* se zip přidá i do Releases.
+on:
+  workflow_dispatch: {}
+  push:
+    tags: ["v*"]
+permissions:
+  contents: write
+jobs:
+  windows:
+    runs-on: windows-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12", cache: pip }
+      - run: pip install -r requirements.txt pyinstaller
+      - run: python -m pytest tests -q
+      - run: pyinstaller desktop/signaly.spec --noconfirm
+      - name: Přibalit pomocné soubory
+        run: Copy-Item desktop\extras\* dist\Signaly\
+      - name: Selftest sestaveného programu
+        run: dist\Signaly\Signaly.exe --selftest
+      - name: Zabalit
+        run: 7z a -tzip Signaly-windows.zip .\dist\Signaly
+      - uses: actions/upload-artifact@v4
+        with: { name: Signaly-windows, path: Signaly-windows.zip, retention-days: 30 }
+      - name: Vydání (jen u tagu)
+        if: startsWith(github.ref, 'refs/tags/v')
+        env: { GH_TOKEN: "${{ github.token }}" }
+        run: gh release create "${{ github.ref_name }}" Signaly-windows.zip --title "Signály ${{ github.ref_name }} (Windows)" --notes "Rozbal a spusť Signaly\Signaly.exe"
