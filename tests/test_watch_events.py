@@ -165,3 +165,53 @@ def test_stooq_circuit_breaker(monkeypatch):
     with pytest.raises(ValueError):
         P.stooq_series("x", "2026-01-01")
     assert len(calls) == n                                         # po 8 selháních bez úspěchu už žádný další požadavek
+
+class _R:
+    def __init__(self, code, text="{}"):
+        self.status_code, self.text, self.content = code, text, text.encode()
+    def raise_for_status(self):
+        if self.status_code >= 400:
+            raise RuntimeError(f"HTTP {self.status_code}")
+
+def _fresh_http(monkeypatch):
+    from pipeline import http as H
+    monkeypatch.setattr(H, "HEALTH", __import__("collections").defaultdict(lambda: {"ok": 0, "fail": 0, "last_error": None}))
+    monkeypatch.setattr(H, "_streak", __import__("collections").defaultdict(int))
+    monkeypatch.setattr(H, "_cool_until", __import__("collections").defaultdict(float))
+    monkeypatch.setattr(H.time, "sleep", lambda s: None)
+    return H
+
+def test_yahoo_goes_through_cffi_and_retries_429(monkeypatch):
+    H = _fresh_http(monkeypatch)
+    seq = [_R(429), _R(200, '{"ok":1}')]
+    class S:
+        def get(self, url, headers=None, timeout=None):
+            assert headers is None                       # vlastní User-Agent by rozbil otisk prohlížeče
+            return seq.pop(0)
+    monkeypatch.setattr(H, "_cffi", object())
+    monkeypatch.setattr(H, "_cffi_session", lambda: S())
+    monkeypatch.setattr(H._session, "get", lambda *a, **k: (_ for _ in ()).throw(AssertionError("Yahoo nesmí jít přes requests")))
+    assert H.get("https://query1.finance.yahoo.com/v8/finance/chart/AAPL?range=5d", "yahoo") == '{"ok":1}'
+    assert H.HEALTH["yahoo"]["ok"] == 1 and not seq
+
+def test_breaker_stops_dead_source(monkeypatch):
+    H = _fresh_http(monkeypatch)
+    calls = {"n": 0}
+    class S:
+        def get(self, *a, **k):
+            calls["n"] += 1
+            return _R(403)
+    monkeypatch.setattr(H, "_cffi", object())
+    monkeypatch.setattr(H, "_cffi_session", lambda: S())
+    for _ in range(H.BREAKER_FAILS + 10):
+        try:
+            H.get("https://query1.finance.yahoo.com/x", "yahoo")
+        except Exception:
+            pass
+    assert calls["n"] == H.BREAKER_FAILS                # po jističi už žádné další požadavky
+    assert "403" in H.HEALTH["yahoo"]["last_error"]     # v logu zůstane skutečná příčina
+
+def test_error_message_keeps_cause():
+    from pipeline import http as H
+    m = H._short(RuntimeError("A" * 400 + " (Caused by ResponseError('too many 429 error responses'))"))
+    assert len(m) < 340 and "too many 429" in m
