@@ -4,5 +4,6 @@ scikit-learn
 pyarrow
 lxml
 requests
+curl_cffi>=0.7
 joblib
 tzdata
