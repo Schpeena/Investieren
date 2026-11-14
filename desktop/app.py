@@ -70,6 +70,12 @@ def selftest():
             importlib.import_module(m); check(True, f"import {m}")
         except Exception as e:
             check(False, f"import {m}: {e}")
+    try:
+        from pipeline import http as H
+        s = H._cffi_session() if H._cffi is not None else None
+        check(s is not None, f"curl_cffi pro Yahoo (spojení jako {H.IMPERSONATE})")
+    except Exception as e:
+        check(False, f"curl_cffi: {e}")
     from pipeline import universe
     check((universe.SEEDS / "extras.csv").exists() and (universe.SEEDS / "influencers.csv").exists(), "seed soubory")
     try:
